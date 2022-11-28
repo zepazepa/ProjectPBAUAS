@@ -9,7 +9,7 @@ public class Tank : MonoBehaviour
 
     //kebutuhan: tank bisa gerak dengan wasd tanpa transform.position
     //public Vector3 limitAccel;
-    float speed = 5f;
+    float speed = 10f;
     Rigidbody rb;
     //tank bisa rotate
     //tank memiliki akselerasi dan maksimum nilai akselerasi dibatasi
@@ -38,7 +38,7 @@ public class Tank : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            rb.MovePosition((Vector3.back * speed * Time.deltaTime) + rb.position);
+            rb.MovePosition((Vector3.back * speed * Time.deltaTime ) + rb.position);
         }
         else if (Input.GetKey(KeyCode.A))
         {
