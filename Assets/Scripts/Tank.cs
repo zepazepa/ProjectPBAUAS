@@ -71,7 +71,7 @@ public class Tank : MonoBehaviour
         {
             //rb.MovePosition((Vector3.back * speed * Time.deltaTime) + rb.position);
             Quaternion angle = Quaternion.Euler(new Vector3(0f,25f,0f) * Time.deltaTime);
-            rb.MoveRotation(rb.rotation     * angle);
+            rb.MoveRotation(rb.rotation * angle);
         }
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
