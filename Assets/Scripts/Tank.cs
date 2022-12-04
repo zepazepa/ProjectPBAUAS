@@ -21,12 +21,8 @@ public class Tank : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
-    {
-
-    }
-
-    private void FixedUpdate()
     {
         //maju - mundur
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
