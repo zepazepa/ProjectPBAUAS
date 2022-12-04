@@ -4,7 +4,7 @@ using UnityEngine;
 
 using TMPro;
 
-public class Cannon : MonoBehaviour
+public class BombOut : MonoBehaviour
 {
     public GameObject ProjectilePrefab;
     public Transform SpawnPoint;
