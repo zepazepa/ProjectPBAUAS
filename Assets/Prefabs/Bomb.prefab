@@ -142,4 +142,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intialVelocity: {x: 0, y: 0, z: 0}
-  lifeTime: 3
+  lifeTime: 5
