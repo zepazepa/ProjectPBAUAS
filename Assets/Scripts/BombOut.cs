@@ -10,6 +10,7 @@ public class BombOut : MonoBehaviour
     public Transform SpawnPoint;
     Vector3 targetPos;
     Rigidbody rb;
+    public float bombSpeed = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,21 +27,21 @@ public class BombOut : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 targetPos = hit.point;
-                
+
                 GameObject ball = Instantiate(ProjectilePrefab, SpawnPoint.transform.position, SpawnPoint.rotation);
                 rb = ball.GetComponent<Rigidbody>();
                 rb.AddForce(targetPos, ForceMode.VelocityChange);
                 //rb.MovePosition(targetPos);
                 //rb.AddForce(transform.up + targetPos, ForceMode.VelocityChange);
             }
-            
+
         }
     }
 
     private void FixedUpdate()
     {
-
        
+
     }
 
 
