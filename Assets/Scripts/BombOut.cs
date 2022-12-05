@@ -8,11 +8,12 @@ public class BombOut : MonoBehaviour
 {
     public GameObject ProjectilePrefab;
     public Transform SpawnPoint;
-
+    Vector3 targetPos;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,12 +21,25 @@ public class BombOut : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") == true)
         {
-            GameObject ball = Instantiate(ProjectilePrefab, SpawnPoint.transform.position, SpawnPoint.rotation);
-            Rigidbody rb = ball.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 10f, ForceMode.VelocityChange);
-            rb.AddForce(transform.up * 10f, ForceMode.VelocityChange);
-
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                targetPos = hit.point;
+                GameObject ball = Instantiate(ProjectilePrefab, SpawnPoint.transform.position, SpawnPoint.rotation);
+                rb = ball.GetComponent<Rigidbody>();
+                rb.AddForce(transform.forward + targetPos, ForceMode.VelocityChange);
+                rb.AddForce(transform.up + targetPos, ForceMode.VelocityChange);
+            }
         }
     }
+
+    private void FixedUpdate()
+    {
+
+       
+    }
+
+
 }
 
