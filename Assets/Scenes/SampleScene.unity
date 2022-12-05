@@ -562,7 +562,7 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   fill: {fileID: 1802520993}
-  health: 0
+  health: 100
 --- !u!114 &578413819
 MonoBehaviour:
   m_ObjectHideFlags: 0
